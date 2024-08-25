@@ -7,6 +7,8 @@ RELEASE="$(rpm -E %fedora)"
 
 ### Install packages
 
+mkdir /opt
+
 wget https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm
 rpm-ostree install ProtonMail-desktop-beta.rpm
 rm ProtonMail-desktop-beta.rpm
