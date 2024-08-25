@@ -5,9 +5,6 @@ set -ouex pipefail
 RELEASE="$(rpm -E %fedora)"
 
 
-./build_files/brew.sh
-
-
 ### Install packages
 
 wget https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm
