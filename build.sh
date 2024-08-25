@@ -8,9 +8,7 @@ RELEASE="$(rpm -E %fedora)"
 ### Install packages
 
 wget https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm
-wget https://zoom.us/client/6.1.10.1400/zoom_x86_64.rpm
 rpm-ostree install ProtonMail-desktop-beta.rpm
-rpm-ostree install zoom_x86_64.rpm
 rm ProtonMail-desktop-beta.rpm zoom_x86_64.rpm
 
 curl -f https://zed.dev/install.sh | sh
