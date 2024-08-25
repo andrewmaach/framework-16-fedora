@@ -9,7 +9,7 @@ RELEASE="$(rpm -E %fedora)"
 
 wget https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm
 rpm-ostree install ProtonMail-desktop-beta.rpm
-rm ProtonMail-desktop-beta.rpm zoom_x86_64.rpm
+rm ProtonMail-desktop-beta.rpm
 
 curl -f https://zed.dev/install.sh | sh
 
