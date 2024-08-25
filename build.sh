@@ -23,7 +23,6 @@ echo "Installing local packages"
 # Warp Terminal
 rpm-ostree install warp.rpm ProtonMail-desktop-beta.rpm
 
-rm ProtonMail-desktop-beta.rpm warp.rpm
 
 # Packages can be installed from any enabled yum repo on the image.
 # RPMfusion repos are available by default in ublue main images
