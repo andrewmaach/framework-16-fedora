@@ -5,11 +5,19 @@ set -ouex pipefail
 RELEASE="$(rpm -E %fedora)"
 
 
+./build_files/brew.sh
+
+
 ### Install packages
 
 wget https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm
+wget https://zoom.us/client/6.1.10.1400/zoom_x86_64.rpm
 rpm-ostree install ProtonMail-desktop-beta.rpm
-rm ProtonMail-desktop-beta.rpm
+rpm-ostree install zoom_x86_64.rpm
+rm ProtonMail-desktop-beta.rpm zoom_x86_64.rpm
+
+curl -f https://zed.dev/install.sh | sh
+
 
 # Packages can be installed from any enabled yum repo on the image.
 # RPMfusion repos are available by default in ublue main images
@@ -17,7 +25,7 @@ rm ProtonMail-desktop-beta.rpm
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-rpm-ostree install screen
+rpm-ostree install fira-code-fonts python3-pip containerd.io podman-compose docker-compose-plugin
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
