@@ -26,8 +26,7 @@ rpm-ostree install ProtonMail-desktop-beta.rpm
 echo "Installing Fedora packages..."
 
 # this installs a package from fedora repos
-rpm-ostree install fira-code-fonts python3-pip arc-theme nautilus
-
+rpm-ostree install fira-code-fonts python3-pip arc-theme nautilus docker-ce docker-ce-cli docker-buildx-plugin containerd.io
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
@@ -35,3 +34,4 @@ rpm-ostree install fira-code-fonts python3-pip arc-theme nautilus
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
+systemctl enable docker.socket
