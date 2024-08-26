@@ -4,11 +4,6 @@ set -ouex pipefail
 
 RELEASE="$(rpm -E %fedora)"
 
-# Additional repos
-echo "Installing Terra"
-curl -fsSL https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo | tee /etc/yum.repos.d/terra.repo
-rpm-ostree install terra-release
-
 ### Install packages
 
 echo "Downloading packages"
@@ -31,7 +26,10 @@ rpm-ostree install ProtonMail-desktop-beta.rpm
 echo "Installing Fedora packages..."
 
 # this installs a package from fedora repos
-rpm-ostree install fira-code-fonts python3-pip zed arc-theme
+rpm-ostree install fira-code-fonts python3-pip arc-theme nautilus
+
+
+rpm-ostree override remove nemo
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
