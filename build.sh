@@ -29,8 +29,6 @@ echo "Installing Fedora packages..."
 rpm-ostree install fira-code-fonts python3-pip arc-theme nautilus
 
 
-rpm-ostree override remove nemo
-
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
 
