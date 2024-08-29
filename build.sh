@@ -11,10 +11,9 @@ echo "Downloading packages"
 # ProtonMail Desktop
 wget https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm
 
-curl -s https://api.github.com/repos/zen-browser/desktop/releases/latest |  grep "/zen.linux-specific.tar.bz2" | cut -d : -f 2,3 | tr -d \" | wget -qi -
-
 
 pushd opt
+curl -s https://api.github.com/repos/zen-browser/desktop/releases/latest |  grep "/zen.linux-specific.tar.bz2" | cut -d : -f 2,3 | tr -d \" | wget -qi -
 tar -xvjf zen.linux-specific.tar.bz2
 rm zen.linux-specific.tar.bz2
 popd
