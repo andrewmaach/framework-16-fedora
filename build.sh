@@ -18,6 +18,9 @@ mv zen /opt/
 
 rm zen.linux-specific.tar.bz2
 
+
+echo "PATH=$PATH:/opt/zen" > /usr/etc/profile.d/
+
 echo "Installing local packages"
 rpm-ostree install ProtonMail-desktop-beta.rpm
 
