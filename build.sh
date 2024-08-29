@@ -13,11 +13,11 @@ wget https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm
 
 curl -s https://api.github.com/repos/zen-browser/desktop/releases/latest |  grep "/zen.linux-specific.tar.bz2" | cut -d : -f 2,3 | tr -d \" | wget -qi -
 
-tar -xvjf zen.linux-specific.tar.bz2
-mkdir /opt/zen
-mv zen/ /opt/zen
 
+pushd /opt
+tar -xvjf zen.linux-specific.tar.bz2
 rm zen.linux-specific.tar.bz2
+popd
 
 
 echo "PATH=$PATH:/opt/zen" > /usr/etc/profile.d/zen.sh
