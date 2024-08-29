@@ -14,14 +14,13 @@ wget https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm
 curl -s https://api.github.com/repos/zen-browser/desktop/releases/latest |  grep "/zen.linux-specific.tar.bz2" | cut -d : -f 2,3 | tr -d \" | wget -qi -
 
 tar -xvjf zen.linux-specific.tar.bz2
-ls
 mkdir -p /opt/zen
 mv zen/ /opt/zen
 
 rm zen.linux-specific.tar.bz2
 
 
-echo "PATH=$PATH:/opt/zen" > /usr/etc/profile.d/
+echo "PATH=$PATH:/opt/zen" > /usr/etc/profile.d/zen.sh
 
 echo "Installing local packages"
 rpm-ostree install ProtonMail-desktop-beta.rpm
