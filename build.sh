@@ -15,6 +15,7 @@ curl -s https://api.github.com/repos/zen-browser/desktop/releases/latest |  grep
 
 tar -xvjf zen.linux-specific.tar.bz2
 ls
+mkdir -p /opt/zen
 mv zen/ /opt/zen
 
 rm zen.linux-specific.tar.bz2
