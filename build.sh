@@ -10,12 +10,15 @@ echo "Downloading packages"
 
 # ProtonMail Desktop
 wget https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm
-wget -O warp.rpm https://app.warp.dev/download?package=rpm
 
+curl -s https://api.github.com/repos/zen-browser/desktop/releases/latest |  grep "/zen.linux-specific.tar.bz2" | cut -d : -f 2,3 | tr -d \" | wget -qi -
 
+tar -xvjf zen.linux-specific.tar.bz2
+mv zen /opt/zen
+
+rm zen.linux-specific.tar.bz2
 
 echo "Installing local packages"
-# Warp Terminal
 rpm-ostree install ProtonMail-desktop-beta.rpm
 
 # Packages can be installed from any enabled yum repo on the image.
