@@ -23,7 +23,7 @@ rpm-ostree install ProtonMail-desktop-beta.rpm
 echo "Installing Fedora packages..."
 
 # this installs a package from fedora repos
-rpm-ostree install fira-code-fonts python3-pip arc-theme nautilus docker-ce docker-ce-cli docker-buildx-plugin containerd.io
+rpm-ostree install fira-code-fonts python3-pip arc-theme nautilus docker-ce docker-ce-cli docker-buildx-plugin containerd.io fish
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
