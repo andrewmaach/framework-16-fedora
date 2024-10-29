@@ -4,9 +4,6 @@ set -ouex pipefail
 
 RELEASE="$(rpm -E %fedora)"
 
-### Set up Repos
-curl -fsSL https://rpm.librewolf.net/librewolf.repo | pkexec tee /usr/etc/yum.repos.d/librewolf.repo
-
 ### Install packages
 
 

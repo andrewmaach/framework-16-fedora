@@ -49,6 +49,7 @@ FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
 COPY system_files/etc/yum.repos.d/docker-ce.repo /etc/yum.repos.d/docker-ce.repo
+COPY system_files/etc/yum.repos.d/librewolf.repo /etc/yum.repos.d/librewolf.repo
 
 COPY build.sh /tmp/build.sh
 
