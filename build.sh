@@ -4,7 +4,11 @@ set -ouex pipefail
 
 RELEASE="$(rpm -E %fedora)"
 
+### Set up Repos
+curl -fsSL https://rpm.librewolf.net/librewolf-repo.repo | pkexec tee /etc/yum.repos.d/librewolf.repo
+
 ### Install packages
+
 
 echo "Downloading packages"
 
@@ -23,7 +27,16 @@ rpm-ostree install ProtonMail-desktop-beta.rpm
 echo "Installing Fedora packages..."
 
 # this installs a package from fedora repos
-rpm-ostree install fira-code-fonts python3-pip arc-theme nautilus docker-ce docker-ce-cli docker-buildx-plugin containerd.io fish
+rpm-ostree install \
+    fira-code-fonts \
+    python3-pip \
+    arc-theme \
+    nautilus \
+    docker-ce \
+    docker-ce-cli \
+    docker-buildx-plugin \containerd.io \
+    fish \
+    librewolf
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
