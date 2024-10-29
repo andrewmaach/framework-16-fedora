@@ -34,7 +34,8 @@ rpm-ostree install \
     nautilus \
     docker-ce \
     docker-ce-cli \
-    docker-buildx-plugin \containerd.io \
+    docker-buildx-plugin \
+    containerd.io \
     fish \
     librewolf
 
