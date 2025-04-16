@@ -29,9 +29,6 @@ rpm-ostree install \
     python3-pip \
     arc-theme \
     nautilus \
-    docker-ce \
-    docker-ce-cli \
-    docker-buildx-plugin \
     containerd.io \
     fish \
     librewolf
