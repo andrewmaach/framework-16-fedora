@@ -37,6 +37,13 @@ rpm-ostree install \
     simple-scan \
     zbar \
     tesseract \
+    docker-ce \
+    docker-ce-cli \
+    docker-buildx-plugin \
+    containerd.io \
+    gnome-tweaks \
+    gnome-extensions-app \
+    gcc \
     librewolf
 
 # this would install a package from rpmfusion
@@ -45,4 +52,5 @@ rpm-ostree install \
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
+systemctl enable docker.socket
 systemctl enable libvirtd
