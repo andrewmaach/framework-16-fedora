@@ -24,13 +24,6 @@ rpm-ostree install \
     nautilus \
     containerd.io \
     fish \
-    virt-install \
-    libvirt-daemon-config-network \
-    libvirt-daemon-kvm \
-    qemu-kvm \
-    virt-manager \
-    virt-viewer \
-    virt-top \
     gcc \
     gnome-extensions-app \
     postgresql \
@@ -53,4 +46,3 @@ rpm-ostree install \
 
 systemctl enable podman.socket
 systemctl enable docker.socket
-systemctl enable libvirtd
