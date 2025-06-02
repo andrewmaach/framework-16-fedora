@@ -21,7 +21,7 @@ rpm-ostree install \
     fira-code-fonts \
     python3-pip \
     arc-theme \
-    nautilus \
+    thunar \
     containerd.io \
     fish \
     virt-install \
@@ -32,7 +32,6 @@ rpm-ostree install \
     virt-viewer \
     virt-top \
     gcc \
-    gnome-extensions-app \
     postgresql \
     simple-scan \
     zbar \
@@ -40,11 +39,17 @@ rpm-ostree install \
     docker-ce \
     docker-ce-cli \
     docker-buildx-plugin \
-    containerd.io \
-    gnome-tweaks \
-    gnome-extensions-app \
     gcc \
-    librewolf
+    librewolf \
+    waybar \
+    wofi \
+    swaylock \
+    swayidle \
+    grim \
+    slurp \
+    wl-clipboard \
+    mako \
+    foot
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
