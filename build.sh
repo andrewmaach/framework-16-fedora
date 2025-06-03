@@ -52,23 +52,38 @@ rpm-ostree install \
     icoutils \
     ImageMagick \
     rpm-build \
-    git
+    git \
+    java-17-openjdk \
+    java-17-openjdk-devel \
+    ncurses-compat-libs
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
 
-# Waydroid installation
-echo "Installing Waydroid..."
+# Android SDK tools installation
+echo "Installing Android SDK tools..."
 
-# Add COPR repository for Waydroid
-curl -s https://copr.fedorainfracloud.org/coprs/aleasto/waydroid/repo/fedora-${RELEASE}/aleasto-waydroid-fedora-${RELEASE}.repo > /etc/yum.repos.d/waydroid.repo
+# Create Android SDK directory
+mkdir -p /opt/android-sdk
+cd /opt/android-sdk
 
-# Install Waydroid and its dependencies
-rpm-ostree install \
-    waydroid \
-    python3-gbinder \
-    lxc \
-    dnsmasq
+# Download Android command line tools
+CMDLINE_TOOLS_VERSION="11076708"
+wget -q https://dl.google.com/android/repository/commandlinetools-linux-${CMDLINE_TOOLS_VERSION}_latest.zip -O cmdline-tools.zip
+unzip -q cmdline-tools.zip
+rm cmdline-tools.zip
+
+# Move cmdline-tools to the correct location
+mkdir -p cmdline-tools/latest
+mv cmdline-tools/* cmdline-tools/latest/ 2>/dev/null || true
+
+# Accept licenses and install essential SDK components
+yes | cmdline-tools/latest/bin/sdkmanager --licenses >/dev/null 2>&1 || true
+cmdline-tools/latest/bin/sdkmanager "platform-tools" "emulator" "build-tools;34.0.0" "platforms;android-34" "system-images;android-34;google_apis;x86_64"
+
+# Set proper permissions
+chmod -R 755 /opt/android-sdk
+
 
 #### Example for enabling a System Unit File
 
