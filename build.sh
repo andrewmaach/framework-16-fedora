@@ -64,7 +64,7 @@ rpm-ostree install \
 echo "Installing Android SDK tools..."
 
 # Create Android SDK directory
-mkdir -p /opt/android-sdk
+mkdir /opt/android-sdk
 cd /opt/android-sdk
 
 # Download Android command line tools
