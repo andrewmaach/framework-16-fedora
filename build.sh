@@ -53,7 +53,7 @@ rpm-ostree install \
     ImageMagick \
     rpm-build \
     git \
-    java-17-openjdk \
+    java-17-openjdk-headless \
     java-17-openjdk-devel \
     ncurses-compat-libs
 
