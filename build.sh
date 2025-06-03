@@ -64,33 +64,18 @@ rpm-ostree install \
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
 
-# Claude Desktop installation
-echo "Installing Claude Desktop..."
+# Waydroid installation
+echo "Installing Waydroid..."
 
-# Create temporary directory for build
-CLAUDE_BUILD_DIR=$(mktemp -d)
-cd "$CLAUDE_BUILD_DIR"
+# Add COPR repository for Waydroid
+curl -s https://copr.fedorainfracloud.org/coprs/aleasto/waydroid/repo/fedora-${RELEASE}/aleasto-waydroid-fedora-${RELEASE}.repo > /etc/yum.repos.d/waydroid.repo
 
-# Clone the repository
-git clone https://github.com/bsneed/claude-desktop-fedora.git
-cd claude-desktop-fedora
-
-# Run the build script (without sudo since we're already root in container build)
-./build-fedora.sh
-
-# Find and install the built RPM
-RPM_FILE=$(find build/electron-app/x86_64/ -name "claude-desktop*.rpm" | head -1)
-if [ -f "$RPM_FILE" ]; then
-    rpm-ostree install "$RPM_FILE"
-    echo "Claude Desktop installed successfully!"
-else
-    echo "Error: Claude Desktop RPM file not found after build"
-    exit 1
-fi
-
-# Cleanup
-cd /
-rm -rf "$CLAUDE_BUILD_DIR"
+# Install Waydroid and its dependencies
+rpm-ostree install \
+    waydroid \
+    python3-gbinder \
+    lxc \
+    dnsmasq
 
 #### Example for enabling a System Unit File
 
