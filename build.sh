@@ -64,11 +64,11 @@ rpm-ostree install \
 echo "Installing Android SDK tools..."
 
 # Create Android SDK directory
-mkdir /opt/android-sdk
-cd /opt/android-sdk
+mkdir -p /var/opt/android-sdk
+cd /var/opt/android-sdk
 
 # Download Android command line tools
-CMDLINE_TOOLS_VERSION="11076708"
+CMDLINE_TOOLS_VERSION="13114758"
 wget -q https://dl.google.com/android/repository/commandlinetools-linux-${CMDLINE_TOOLS_VERSION}_latest.zip -O cmdline-tools.zip
 unzip -q cmdline-tools.zip
 rm cmdline-tools.zip
