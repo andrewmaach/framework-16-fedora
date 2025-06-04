@@ -60,27 +60,6 @@ rpm-ostree install \
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
 
-# Android SDK tools installation
-echo "Installing Android SDK tools..."
-
-# Create Android SDK directory
-mkdir -p /usr/share/android-sdk
-cd /usr/share/android-sdk
-
-# Download Android command line tools
-CMDLINE_TOOLS_VERSION="13114758"
-wget -q https://dl.google.com/android/repository/commandlinetools-linux-${CMDLINE_TOOLS_VERSION}_latest.zip -O cmdline-tools.zip
-unzip -q cmdline-tools.zip
-rm cmdline-tools.zip
-
-# Move cmdline-tools to the correct location
-mkdir -p cmdline-tools/latest
-mv cmdline-tools/* cmdline-tools/latest/ 2>/dev/null || true
-
-# Set proper permissions
-chmod -R 755 /usr/share/android-sdk
-
-
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
