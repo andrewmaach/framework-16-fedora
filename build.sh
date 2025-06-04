@@ -82,7 +82,7 @@ yes | cmdline-tools/latest/bin/sdkmanager --licenses >/dev/null 2>&1 || true
 cmdline-tools/latest/bin/sdkmanager "platform-tools" "emulator" "build-tools;34.0.0" "platforms;android-34" "system-images;android-34;google_apis;x86_64"
 
 # Set proper permissions
-chmod -R 755 /opt/android-sdk
+chmod -R 755 /usr/share/android-sdk
 
 
 #### Example for enabling a System Unit File
