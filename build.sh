@@ -79,7 +79,7 @@ mv cmdline-tools/* cmdline-tools/latest/ 2>/dev/null || true
 
 # Accept licenses and install essential SDK components
 yes | cmdline-tools/latest/bin/sdkmanager --licenses >/dev/null 2>&1 || true
-cmdline-tools/latest/bin/sdkmanager "platform-tools" "emulator" "build-tools;34.0.0" "platforms;android-34" "system-images;android-34;google_apis;x86_64"
+cmdline-tools/latest/bin/sdkmanager "platform-tools" "emulator" "build-tools;35.0.0" "platforms;android-34" "system-images;android-35;google_apis;x86_64" "platforms;android-35"
 
 # Set proper permissions
 chmod -R 755 /usr/share/android-sdk
