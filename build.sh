@@ -89,8 +89,7 @@ cmdline-tools/latest/bin/sdkmanager \
     "platforms;android-34" \
     "platforms;android-35" \
     "ndk;26.1.10909125" \
-    "cmake;3.22.1" \
-    "patcher;v4"
+    "cmake;3.22.1"
 
 # Set proper permissions
 chmod -R 755 /usr/share/android-sdk
