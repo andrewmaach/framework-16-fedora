@@ -18,41 +18,21 @@ echo "Installing Fedora packages..."
 
 # this installs a package from fedora repos
 rpm-ostree install \
-    fira-code-fonts \
-    python3-pip \
     arc-theme \
-    thunar \
     containerd.io \
     fish \
     gcc \
     postgresql \
-    simple-scan \
-    zbar \
-    tesseract \
     docker-ce \
     docker-ce-cli \
     docker-buildx-plugin \
     gcc \
     librewolf \
     microsoft-edge-stable \
-    sway \
-    waybar \
-    wofi \
-    swaylock \
-    swayidle \
-    grim \
-    slurp \
-    wl-clipboard \
     mako \
-    foot \
     nodejs \
     npm \
-    p7zip \
-    p7zip-plugins \
     wget \
-    icoutils \
-    ImageMagick \
-    rpm-build \
     git \
     java-21-openjdk-headless \
     java-21-openjdk-devel \
