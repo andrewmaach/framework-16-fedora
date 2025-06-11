@@ -34,6 +34,7 @@ rpm-ostree install \
     docker-buildx-plugin \
     gcc \
     librewolf \
+    microsoft-edge-stable \
     sway \
     waybar \
     wofi \
