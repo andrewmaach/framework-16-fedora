@@ -28,7 +28,6 @@ rpm-ostree install \
     docker-buildx-plugin \
     gcc \
     librewolf \
-    microsoft-edge-stable \
     mako \
     nodejs \
     npm \
